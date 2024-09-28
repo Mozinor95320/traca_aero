@@ -909,5 +909,5 @@
   </div>
 
 </body>
-
+<script src="./script_fiche_traca.js"></script>
 </html>
