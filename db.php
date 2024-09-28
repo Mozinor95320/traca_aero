@@ -8,7 +8,6 @@ $pass = "Parker92700";
 $charset = 'utf8';
 
 
-
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset"; // DSN pour PDO
 
 $options = [
