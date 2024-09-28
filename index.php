@@ -57,7 +57,7 @@
 
             <!-- Registration Form -->
             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                <form id="registerForm" action="register.php" method="POST">
+                <form id="registerForm" action="github/register.php" method="POST">
                     <div class="mb-3">
                         <label for="register-username" class="form-label">Nom d'utilisateur</label>
                         <input type="text" class="form-control" id="register-username" name="username" required>

@@ -1,21 +1,43 @@
-// Validation du formulaire d'inscription
-document.getElementById('registerForm').addEventListener('submit', function (event) {
-    const password = document.getElementById('register-password').value;
-    const confirmPassword = document.getElementById('register-confirm-password').value;
+document.addEventListener('DOMContentLoaded', function () {
+    // Validation du formulaire de création de compte
+    const registerForm = document.getElementById('registerForm');
+    const password = document.getElementById('register-password');
+    const confirmPassword = document.getElementById('register-confirm-password');
 
-    if (password !== confirmPassword) {
-        event.preventDefault(); // Empêche la soumission
-        alert('Les mots de passe ne correspondent pas.');
-    }
-});
+    registerForm.addEventListener('submit', function (event) {
+        // Réinitialiser les messages d'erreur
+        password.classList.remove('is-invalid');
+        confirmPassword.classList.remove('is-invalid');
 
-// Validation simple du formulaire de connexion
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-    const username = document.getElementById('login-username').value;
-    const password = document.getElementById('login-password').value;
+        // Vérification si les mots de passe correspondent
+        if (password.value !== confirmPassword.value) {
+            event.preventDefault(); // Empêcher l'envoi du formulaire
+            password.classList.add('is-invalid');
+            confirmPassword.classList.add('is-invalid');
+            alert('Les mots de passe ne correspondent pas.');
+        }
+    });
 
-    if (username.trim() === '' || password.trim() === '') {
-        event.preventDefault(); // Empêche la soumission
-        alert('Veuillez remplir tous les champs.');
-    }
+    // Validation du formulaire de connexion
+    const loginForm = document.getElementById('loginForm');
+    const loginUsername = document.getElementById('login-username');
+    const loginPassword = document.getElementById('login-password');
+
+    loginForm.addEventListener('submit', function (event) {
+        // Réinitialiser les messages d'erreur
+        loginUsername.classList.remove('is-invalid');
+        loginPassword.classList.remove('is-invalid');
+
+        // Vérification de champs vides
+        if (loginUsername.value.trim() === '' || loginPassword.value.trim() === '') {
+            event.preventDefault(); // Empêcher l'envoi du formulaire
+            if (loginUsername.value.trim() === '') {
+                loginUsername.classList.add('is-invalid');
+            }
+            if (loginPassword.value.trim() === '') {
+                loginPassword.classList.add('is-invalid');
+            }
+            alert('Veuillez remplir tous les champs.');
+        }
+    });
 });
