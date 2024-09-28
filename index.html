@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,6 +14,17 @@
 
 <body>
     <div class="container mt-5">
+        <!-- Affichage des messages d'erreur ou de succès -->
+        <?php if (isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?php echo $_SESSION['message_type']; ?>">
+                <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']); // Suppression du message après l'affichage
+                unset($_SESSION['message_type']);
+                ?>
+            </div>
+        <?php endif; ?>
+
         <!-- Tabs for switching between login and register -->
         <ul class="nav nav-tabs" id="authTab" role="tablist">
             <li class="nav-item" role="presentation">

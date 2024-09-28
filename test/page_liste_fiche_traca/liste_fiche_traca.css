@@ -1,0 +1,18 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.btn-outline-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+}
